@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}儲值{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-center">
+                    <h3>儲值頁面</h3>
+                </div>
+                <div class="card-body">
+
+                    <!-- 顯示當前餘額 -->
+                    <div class="mb-4 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">目前餘額:</h5>
+                        <div class="d-flex align-items-center">
+                            <p class="fs-4 mb-0" id="balance">NT$ {{ balance }}</p>
+                        </div>
+                    </div>
+
+                    <!-- 儲值選項 -->
+                    <h5 class="mt-4">選擇儲值金額</h5>
+                    <div class="btn-group d-flex justify-content-between" role="group" aria-label="儲值金額">
+                        <button type="button" class="btn btn-outline-primary" data-amount="100">NT$ 100</button>
+                        <button type="button" class="btn btn-outline-primary" data-amount="300">NT$ 300</button>
+                        <button type="button" class="btn btn-outline-primary" data-amount="500">NT$ 500</button>
+                        <button type="button" class="btn btn-outline-primary" data-amount="1000">NT$ 1000</button>
+                        <button type="button" class="btn btn-outline-primary" data-amount="1500">NT$ 1500</button>
+                        <button type="button" class="btn btn-outline-primary" data-amount="2000">NT$ 2000</button>
+                    </div>
+
+                    <!-- 自訂儲值金額 -->
+                    <div class="mb-4 mt-4">
+                        <label for="customAmount" class="form-label">自訂儲值金額</label>
+                        <input type="number" class="form-control" id="customAmount" placeholder="請輸入金額" min="1">
+                    </div>
+
+                    <!-- 儲值按鈕 -->
+                    <button id="rechargeButton" class="btn btn-success w-100">儲值</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="static/js/recharge.js"></script>
+{% endblock %}
